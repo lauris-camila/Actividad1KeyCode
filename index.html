@@ -10,9 +10,12 @@
     <div class="container">
         <h1>Aplicación de Notas 📝</h1>
         <form id="noteForm">
-            <input type="text" id="noteInput" placeholder="Escribe tu nota aquí..." required>
+            <input type="text" id="noteTitle" placeholder="Título de la nota" required>
+            <textarea id="noteContent" placeholder="Contenido de la nota" required></textarea>
             <button type="submit">Agregar Nota</button>
         </form>
+        <ul id="notesList"></ul>
+        
         <ul id="noteList"></ul>
     </div>
     <script src="script.js"></script>
