@@ -14,3 +14,18 @@ document.getElementById('noteForm').addEventListener('submit', function(event) {
     note.appendChild(editButton);
     editButton.addEventListener('click', function() { /* código para mostrar formulario de edición */ });
 });
+editButton.addEventListener('click', function() {
+    const editForm = document.createElement('form');
+    editForm.innerHTML = `
+    <input type="text" id="editNote" value="${nota}">
+    <button type="submit">Guardar cambios</button>
+    `;
+    note.appendChild(editForm);
+    
+    editForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const newNote = document.getElementById('editNote').value;
+    note.textContent = newNote;
+    editForm.remove();
+    });
+});
